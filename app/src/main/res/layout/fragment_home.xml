@@ -10,7 +10,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".HomeFragment">
+        tools:context=".HomeFragment"
+        android:background="#ADEDF4"
+
+        >
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
@@ -22,7 +25,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toTopOf="@id/message"
-            android:id="@+id/recyclerview" />
+            android:id="@+id/recyclerview"
+            />
 
         <EditText
             android:layout_width="0dp"
@@ -32,14 +36,17 @@
             app:layout_constraintTop_toBottomOf="@id/recyclerview"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/btnsend"
+
             android:imeOptions="actionDone"
             android:hint="type a message"
             android:textSize="20sp"
             android:padding="8dp"
+            android:layout_marginBottom="5dp"
             android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="2dp"
+            android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent" />
-<ImageView
+<androidx.appcompat.widget.AppCompatImageView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:id="@+id/btnsend"
@@ -49,8 +56,12 @@
     app:layout_constraintTop_toBottomOf="@id/recyclerview"
     app:layout_constraintBottom_toBottomOf="parent"
     android:padding="8dp"
-    android:layout_marginEnd="8dp"
-    android:layout_marginStart="4dp"/>
+
+    android:paddingStart="8dp"
+    android:background="@color/white"
+
+    android:layout_marginEnd="2dp"
+    />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

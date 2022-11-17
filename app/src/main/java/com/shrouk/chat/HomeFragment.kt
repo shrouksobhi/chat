@@ -2,16 +2,19 @@ package com.shrouk.chat
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView.LayoutManager
+import androidx.recyclerview.widget.RecyclerView.SmoothScroller
 import com.google.firebase.database.*
 import com.google.firebase.database.ktx.getValue
 import com.shrouk.chat.databinding.FragmentHomeBinding
+
 
 class HomeFragment : Fragment() {
    private lateinit var newMessageData:Message
@@ -84,9 +87,16 @@ class HomeFragment : Fragment() {
         var recyclerView=binding.recyclerview
 
         var layoutManager:LayoutManager= LinearLayoutManager(requireContext())
-        var messageAdapter=MessageAdapter(list!!,requireContext())
+        var messageAdapter=MessageAdapter(list )
         recyclerView.layoutManager=layoutManager
         recyclerView.adapter=messageAdapter
+     //   recyclerView.scrollToPosition(list.size - 1)
+        recyclerView.scrollToPosition(list.size-1)
+//        val smoothScroller: SmoothScroller = object : LinearSmoothScroller(context) {
+//            override fun getVerticalSnapPreference(): Int {
+//                return SNAP_TO_START
+//            }
+//        }
 
     }
 
