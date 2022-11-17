@@ -13,7 +13,7 @@ class MessageAdapter(var message:List<Message>,var context:Context)
     class MessageViewHolder(val binding:MessageItemListBinding)
         :RecyclerView.ViewHolder(binding.root) {
    var newmessage=binding.messageTextview
-        var image=binding.image
+      //  var image=binding.image
         var userid=binding.userid
 
     }
@@ -27,7 +27,7 @@ class MessageAdapter(var message:List<Message>,var context:Context)
     override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
         var _message=message[position]
         holder.newmessage.text=_message.message
-        holder.userid.text=_message.userId.toString()
+        holder.userid.text=_message.userId
      //Glide.with(View(context)).load(_message.userImage).into(holder.image)
     }
 

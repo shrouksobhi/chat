@@ -40,7 +40,7 @@ class HomeFragment : Fragment() {
 
             var message=  binding.message.text.toString()
 
-            newMessageData=Message(0,message)
+            newMessageData=Message("0",message)
             mref.child("Messages").push().setValue(newMessageData)
             binding.message.text.clear()
 
@@ -61,10 +61,11 @@ class HomeFragment : Fragment() {
                 // Get Post object and use the values to update the UI
                 val mymessage= dataSnapshot.children.forEach {
                     Log.e("TAG", "onDataChange: "+it )
-                    val mesage=Message(it.value)
-                  var m1=  it.getValue<Message>()
-                   list.add(m1!!)
-                    installViews(it)
+                    //val mesage=Message(it.value)
+
+                  var m1=  it.getValue<Message>()!!
+                   list.add(m1)
+                    installViews(list)
                 }
 
             }
@@ -75,7 +76,7 @@ class HomeFragment : Fragment() {
             }
         }
 
-        mref.addValueEventListener(messageListener)
+        mref.child("Messages").addValueEventListener(messageListener)
 
 
     }
