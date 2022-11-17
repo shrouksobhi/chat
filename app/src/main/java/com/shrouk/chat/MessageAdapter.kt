@@ -28,9 +28,10 @@ class MessageAdapter(var message:List<Message>,var context:Context)
         var _message=message[position]
         holder.newmessage.text=_message.message
         holder.userid.text=_message.userId.toString()
-     Glide.with(View(context)).load(_message.userImage).into(holder.image)
+     //Glide.with(View(context)).load(_message.userImage).into(holder.image)
     }
 
     override fun getItemCount(): Int {
 return message.size   }
+
 }

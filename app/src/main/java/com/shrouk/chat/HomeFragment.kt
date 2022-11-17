@@ -40,7 +40,7 @@ class HomeFragment : Fragment() {
 
             var message=  binding.message.text.toString()
 
-            newMessageData=Message(0,R.drawable.send,message)
+            newMessageData=Message(0,message)
             mref.child("Messages").push().setValue(newMessageData)
             binding.message.text.clear()
 
@@ -54,15 +54,17 @@ class HomeFragment : Fragment() {
 //        mref.child("Messages").push().setValue(m2)
 //        mref.child("Messages").push().setValue(m3)
 //        mref.child("Messages").push().setValue(m4)
-
+   var list= mutableListOf<Message>()
         val messageListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
+
                 // Get Post object and use the values to update the UI
                 val mymessage= dataSnapshot.children.forEach {
+                    Log.e("TAG", "onDataChange: "+it )
+                    val mesage=Message(it.value)
                   var m1=  it.getValue<Message>()
-                  var list=listOf(m1)
-
-                    installViews(list as List<Message>)
+                   list.add(m1!!)
+                    installViews(it)
                 }
 
             }

@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "209123323536",
-    "project_id": "chat-ea240",
-    "storage_bucket": "chat-ea240.appspot.com"
+    "project_number": "735181740560",
+    "project_id": "chat-6b2ee",
+    "storage_bucket": "chat-6b2ee.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:209123323536:android:21de56f6ee31eae83db215",
+        "mobilesdk_app_id": "1:735181740560:android:f08a2227c5f114ed0b8895",
         "android_client_info": {
           "package_name": "com.shrouk.chat"
         }
       },
       "oauth_client": [
         {
-          "client_id": "209123323536-qfdefbju4euc7bjp48pql24nlbk1qnk5.apps.googleusercontent.com",
+          "client_id": "735181740560-l1rmeq17aj8k2naedtrq8um89k5j99aj.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAaYHTaeAnvEsPeiIAJFt560O6RYsUmLhI"
+          "current_key": "AIzaSyB61JgcsM9jmkpbMIbYhQGai-wPSFlNQCs"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "209123323536-qfdefbju4euc7bjp48pql24nlbk1qnk5.apps.googleusercontent.com",
+              "client_id": "735181740560-l1rmeq17aj8k2naedtrq8um89k5j99aj.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
