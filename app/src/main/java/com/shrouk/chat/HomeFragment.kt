@@ -34,12 +34,15 @@ class HomeFragment : Fragment() {
        // var ref=database.getReference("Messages")
         mref.child("Messages")
 
-      var message=  binding.message.text.toString()
 
 
         binding.btnsend.setOnClickListener {
-           newMessageData=Message(0,R.drawable.send,message)
+
+            var message=  binding.message.text.toString()
+
+            newMessageData=Message(0,R.drawable.send,message)
             mref.child("Messages").push().setValue(newMessageData)
+            binding.message.text.clear()
 
         }
 //     var m1=Message(0,R.drawable.send,"Hi user2")
@@ -58,6 +61,7 @@ class HomeFragment : Fragment() {
                 val mymessage= dataSnapshot.children.forEach {
                   var m1=  it.getValue<Message>()
                   var list=listOf(m1)
+
                     installViews(list as List<Message>)
                 }
 
@@ -65,7 +69,7 @@ class HomeFragment : Fragment() {
 
             override fun onCancelled(databaseError: DatabaseError) {
                 // Getting Post failed, log a message
-                Log.w("Home", "loadPost:onCancelled", databaseError.toException())
+                Log.w("Home", "loadmessage:onCancelled", databaseError.toException())
             }
         }
 
