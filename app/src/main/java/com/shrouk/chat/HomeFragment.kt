@@ -60,13 +60,14 @@ class HomeFragment : Fragment() {
    var list= mutableListOf<Message>()
         val messageListener = object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-
+                  list.clear()
                 // Get Post object and use the values to update the UI
                 val mymessage= dataSnapshot.children.forEach {
                     Log.e("TAG", "onDataChange: "+it )
                     //val mesage=Message(it.value)
 
-                  var m1=  it.getValue<Message>()!!
+                 // var m1=  it.getValue <Message>()!!
+                  var  m1 = it.getValue<Message>()!!
                    list.add(m1)
                     installViews(list)
                 }
@@ -86,7 +87,7 @@ class HomeFragment : Fragment() {
     private fun installViews(list :List<Message>) {
         var recyclerView=binding.recyclerview
 
-        var layoutManager:LayoutManager= LinearLayoutManager(requireContext())
+        var layoutManager:LayoutManager= LinearLayoutManager(activity?.applicationContext)
         var messageAdapter=MessageAdapter(list )
         recyclerView.layoutManager=layoutManager
         recyclerView.adapter=messageAdapter

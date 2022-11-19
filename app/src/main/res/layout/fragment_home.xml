@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".HomeFragment"
-        android:background="#ADEDF4"
+        android:background="#1CA396"
 
         >
 
@@ -24,44 +24,61 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/message"
+            app:layout_constraintBottom_toTopOf="@id/editecard"
             android:id="@+id/recyclerview"
             />
+<androidx.cardview.widget.CardView
+    android:layout_width="335dp"
+    android:layout_height="45dp"
+    android:layout_marginTop="8dp"
 
+    android:padding="10dp"
+    android:id="@+id/editecard"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toStartOf="@id/imagecard"
+    android:layout_marginBottom="5dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="2dp"
+    app:cardCornerRadius="12dp">
         <EditText
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/message"
             android:text=""
-            app:layout_constraintTop_toBottomOf="@id/recyclerview"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/btnsend"
-
             android:imeOptions="actionDone"
             android:hint="type a message"
             android:textSize="20sp"
             android:padding="8dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="2dp"
+            android:paddingStart="12dp"
+
             android:background="@color/white"
             app:layout_constraintBottom_toBottomOf="parent" />
-<androidx.appcompat.widget.AppCompatImageView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/btnsend"
-    android:src="@drawable/send"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toEndOf="@id/message"
-    app:layout_constraintTop_toBottomOf="@id/recyclerview"
-    app:layout_constraintBottom_toBottomOf="parent"
-    android:padding="8dp"
+</androidx.cardview.widget.CardView>
 
-    android:paddingStart="8dp"
-    android:background="@color/white"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/imagecard"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:backgroundTint="#4BD8CB"
 
-    android:layout_marginEnd="2dp"
-    />
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="5dp"
+            app:cardCornerRadius="100dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/editecard">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnsend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/send"
+
+                />
+        </androidx.cardview.widget.CardView>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
